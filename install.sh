@@ -8,3 +8,10 @@ tightvncserver :1
 tightvncserver -kill :1
 echo "lxterminal &"  >> ~/.vnc/xstartup
 echo "/usr/bin/lxsession -s LXDE &" >> ~/.vnc/xstartup
+
+echo "#!/bin/bash" >> /bin/vncstart
+echo "tightvncserver :1 " >> /bin/vncstart
+sudo chmod +x /bin/vncstart
+echo "#!/bin/bash" >> /bin/vncstop
+echo "tightvncserver -kill :1" >> /bin/vncstop
+sudo chmod +x /bin/vncstop
