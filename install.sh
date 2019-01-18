@@ -36,6 +36,7 @@ echo "tightvncserver -kill :1" >> /bin/vncstop
 sudo chmod +x /bin/vncstop
 
 sudo apt-get -y install ristretto
+sudo apt-get -y install mpv
 
 clear
 echo "---------------------------"
