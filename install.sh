@@ -61,6 +61,8 @@ sudo chmod +x /bin/vncstop
 sudo apt-get -y install ristretto
 sudo apt-get -y install mpv
 sudo apt-get -y install firefox-esr
+sudo apt-get -y install chromium-browser
+
 
 clear
 echo "---------------------------"
