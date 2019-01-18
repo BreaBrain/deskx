@@ -16,7 +16,7 @@ echo "#!/bin/bash" >> /bin/vncstop
 echo "tightvncserver -kill :1" >> /bin/vncstop
 sudo chmod +x /bin/vncstop
 
-sudo apt-get install ristretto
+sudo apt-get -y install ristretto
 
 clear
 echo "---------------------------"
