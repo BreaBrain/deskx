@@ -1,7 +1,7 @@
-#!/bin/bash      
-#----------------------------
-#works with:        debian
-#doesn't work with:    opensuse
+#!/bin/bash                                                                                                         
+#----------------------------                                                                                       
+#works with:        debian                                                                                          
+#doesn't work with:    opensuse                                                                                     
 #----------------------------
 clear
 echo "Do you want to install VNC for vServer? (y/n)"
@@ -17,7 +17,8 @@ echo "heigth"
 read h
 res="-geometry $w\x$h"
 fi
-echo "---OS---"
+clear
+echo "---=OS=---"
 echo "1. Debian"
 echo "2. Ubuntu"
 echo "more comming soon.."
@@ -26,18 +27,22 @@ sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get -y install lxde
 sudo apt-get install -y nano
+
 if [ $os == "1" ]; then
 sudo apt-get -y install xorg lxde-core tightvncserver
-elif[ $os == "2" ]; then
-sudo apt-get install -y xfce4 xfce4-goodies
+fi
+if[ $os == "2" ]
+
+sudo apt-get -y install xfce4 xfce4-goodies
 sudo apt-get -y install tightvncserver
 fi
 tightvncserver :1
 tightvncserver -kill :1
-if [ $os == "1" ]; then
+if [ $os == "1" ];then
 echo "lxterminal &"  >> ~/.vnc/xstartup
 echo "/usr/bin/lxsession -s LXDE &" >> ~/.vnc/xstartup
-elif[ $os == "2"]; then
+fi
+if [ $os == "2" ]; then
 mv /root/.vnc/xstartup /root/.vnc/xstartup.bak
 echo "
 #!/bin/bash
@@ -63,7 +68,3 @@ echo ": VNC IP:   localhost:1   :"
 echo ": Start:    vncstart      :"
 echo ": Stop:     vncstop       :"
 echo "---------------------------"
-else
-echo $q
-echo "ok"
-fi
