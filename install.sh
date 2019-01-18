@@ -15,3 +15,10 @@ sudo chmod +x /bin/vncstart
 echo "#!/bin/bash" >> /bin/vncstop
 echo "tightvncserver -kill :1" >> /bin/vncstop
 sudo chmod +x /bin/vncstop
+
+clear
+echo "-----------------------"
+echo ": Finished!           :"
+echo ": Start:    vncstart  :"
+echo ": Stop:     vncstop   :"
+echo "-----------------------"
