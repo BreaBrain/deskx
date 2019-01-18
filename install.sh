@@ -17,8 +17,9 @@ echo "tightvncserver -kill :1" >> /bin/vncstop
 sudo chmod +x /bin/vncstop
 
 clear
-echo "-----------------------"
-echo ": Finished!           :"
-echo ": Start:    vncstart  :"
-echo ": Stop:     vncstop   :"
-echo "-----------------------"
+echo "---------------------------"
+echo ": Finished!               :"
+echo ": VNC IP:   localhost:1   :" 
+echo ": Start:    vncstart      :"
+echo ": Stop:     vncstop       :"
+echo "---------------------------"
