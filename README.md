@@ -12,3 +12,8 @@ cd vservervnc
 sudo chmod +x uninstall.sh
 
 ./uninstall.sh
+
+# OS
+Works with:         Debian
+
+Doesnt works with:  OpenSuse
