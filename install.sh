@@ -1,4 +1,8 @@
-#!/bin/bash                                                                                                         
+#!/bin/bash      
+#----------------------------
+#works with:        debian
+#doesn't work with:    opensuse
+#----------------------------
 sudo apt-get update                                                                                                 
 sudo apt-get -y upgrade                                                                                                
 sudo apt-get -y install lxde
