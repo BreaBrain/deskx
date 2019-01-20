@@ -62,6 +62,19 @@ sudo apt-get -y install ristretto
 sudo apt-get -y install mpv
 sudo apt-get -y install firefox-esr
 sudo apt-get -y install chromium-browser
+sudo apt-get -y install nautilus
+
+if [ $os == "2" ]; then
+clear
+echo "Do you want to install Tor Browser? (y/n)"
+read tor
+if [ &tor == "y" ]; then
+sudo printf "deb http://deb.debian.org/debian stretch-backports main contrib" > /etc/apt/sources.list
+sudo apt-get -y update
+sudo apt install -y torbrowser-launcher
+sudo mv tor /root/.local/share/torbrowser/tbb/x86_64/tor-browser_en-US/start-tor-browser.desktop
+fi
+fi
 
 
 clear
