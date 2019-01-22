@@ -69,7 +69,7 @@ if [ $os == "2" ]; then
 clear
 echo "Do you want to install Tor Browser? (y/n)"
 read tor
-if [ &tor == "y" ]; then
+if [ $tor == "y" ]; then
 sudo printf "deb http://deb.debian.org/debian stretch-backports main contrib" > /etc/apt/sources.list
 sudo apt-get -y update
 sudo apt install -y torbrowser-launcher
