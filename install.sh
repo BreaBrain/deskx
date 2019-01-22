@@ -72,6 +72,7 @@ read tor
 if [ $tor == "y" ]; then
 sudo printf "deb http://deb.debian.org/debian stretch-backports main contrib" > /etc/apt/sources.list
 sudo apt-get -y update
+sudo apt-get -y upgrade
 sudo apt install -y torbrowser-launcher
 sudo mv tor /root/.local/share/torbrowser/tbb/x86_64/tor-browser_en-US/start-tor-browser.desktop
 fi
