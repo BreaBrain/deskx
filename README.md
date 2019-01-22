@@ -1,13 +1,13 @@
-# vservervnc
+# DeskX
 VNC on a vServer
 # install
-cd vservervnc
+cd deskx
 
 sudo chmod +x install.sh 
 
 ./install.sh
 # uninstall
-cd vservervnc
+cd deskx
 
 sudo chmod +x uninstall.sh
 
