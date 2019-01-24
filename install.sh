@@ -19,10 +19,10 @@ function programms {
 
 function script {
         echo "#!/bin/bash" >> /bin/vncstart
-        echo "vncserver :1 -geometry 1920x1080 -depth 24 -localhost no">> /bin/vncstart
+        echo "tightvncserver 1920x1080">> /bin/vncstart
         sudo chmod +x /bin/vncstart
         echo "#!/bin/bash" >> /bin/vncstop
-        echo "vncserver -kill :1" >> /bin/vncstop
+        echo "tightvncserver -kill :1" >> /bin/vncstop
         sudo chmod +x /bin/vncstop
 }
 
