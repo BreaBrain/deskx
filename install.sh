@@ -29,7 +29,8 @@ sudo apt-get -y install lxde
 sudo apt-get install -y nano
 
 if [ $os == "1" ]; then
-sudo apt-get -y install xorg lxde-core tightvncserver
+sudo apt-get -y install xorg lxde-core
+sudo apt-get -y install vnc4server
 fi
 if[ $os == "2" ]
 
@@ -52,10 +53,11 @@ startxfce4 &
 sudo chmod +x  /root/.vnc/xstartup
 fi
 echo "#!/bin/bash" >> /bin/vncstart
-echo "tightvncserver :1 $res">> /bin/vncstart
+echo "vncserver :1 $res -depth 24 -localhost no ">> /bin/vncstart
 sudo chmod +x /bin/vncstart
 echo "#!/bin/bash" >> /bin/vncstop
-echo "tightvncserver -kill :1" >> /bin/vncstop
+echo "vncserver -kill :1" >> /bin/vncstop
+#echo "tightvncserver -kill :1" >> /bin
 sudo chmod +x /bin/vncstop
 
 sudo apt-get -y install ristretto
