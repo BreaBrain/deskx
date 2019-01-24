@@ -56,10 +56,10 @@ if [ $os == "1" ]; then
 
         programms
 
-        sudo printf "deb http://deb.debian.org/debian stretch-backports main contrib" > /etc/apt/sources.list
-        update
-        sudo apt-get install -y torbrowser-launcher
-        sudo mv tor /root/.local/share/torbrowser/tbb/x86_64/tor-browser_en-US/Browser/start-tor-browser
+        #sudo printf "deb http://deb.debian.org/debian stretch-backports main contrib" > /etc/apt/sources.list
+        #update
+        #sudo apt-get install -y torbrowser-launcher
+        #sudo mv tor /root/.local/share/torbrowser/tbb/x86_64/tor-browser_en-US/Browser/start-tor-browser
 
         script
 fi
