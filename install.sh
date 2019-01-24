@@ -47,9 +47,9 @@ if [ $os == "1" ]; then
         #sudo apt-get -y install vnc4server
         sudo vncpasswd
 
-        #echo "lxterminal &"  >> ~/.vnc/xstartup
-        #echo "/usr/bin/lxsession -s LXDE &" >> ~/.vnc/xstartup
-        echo "exec /usr/bin/mate-session &" >> ~/.vnc/xstartup
+        echo "lxterminal &"  >> ~/.vnc/xstartup
+        echo "/usr/bin/lxsession -s LXDE &" >> ~/.vnc/xstartup
+        #echo "exec /usr/bin/mate-session &" >> ~/.vnc/xstartup
 
         vncserver :1
         vncserver -kill :1
