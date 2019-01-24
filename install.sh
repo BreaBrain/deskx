@@ -6,6 +6,7 @@ function update {
 }
 
 function programms {
+        update
         sudo apt-get -y install nano
         sudo apt-get -y install python
         sudo apt-get -y install ristretto
