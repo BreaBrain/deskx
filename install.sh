@@ -28,10 +28,6 @@ function script {
 
 
 clear
-echo "Do you want to install VNC for vServer? (y/n)"
-read q
-if [ $q == "y" ]; then
-clear
 echo "Operating System"
 echo "================="
 echo "1. Debian"
