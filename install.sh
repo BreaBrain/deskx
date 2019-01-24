@@ -43,16 +43,16 @@ if [ $os == "1" ]; then
         update
         apt-get install sudo
         sudo apt-get -y install lxde
-        sudo apt-get -y install xorg lxde-core vnc4server
+        sudo apt-get -y install xorg lxde-core tightvncserver
         #sudo apt-get -y install vnc4server
-        sudo vncpasswd
+        #sudo vncpasswd
+
+        vncserver :1
+        vncserver -kill :1
 
         echo "lxterminal &"  >> ~/.vnc/xstartup
         echo "/usr/bin/lxsession -s LXDE &" >> ~/.vnc/xstartup
         #echo "exec /usr/bin/mate-session &" >> ~/.vnc/xstartup
-
-        vncserver :1
-        vncserver -kill :1
 
         programms
 
