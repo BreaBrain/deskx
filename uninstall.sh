@@ -1,6 +1,6 @@
 #!/bin/bash
-tightvncserver -kill :1
-sudo apt-get purge xorg lxde-core tighvncserver
+vncserver -kill :1
+sudo apt-get purge xorg lxde-core vncserver
 sudo apt-get purge lxde
 rm /bin/vncstart
 rm /bin/vncstop
