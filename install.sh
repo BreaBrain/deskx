@@ -27,6 +27,26 @@ function script {
         sudo chmod +x /bin/vncstop
 }
 
+function f2b {
+        sudo apt-get -y install fail2ban
+        sudo systemctl stop fail2ban
+        sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+        sudo echo "[tighvnc-auth]
+                enabled = true
+                port = 5901
+                filter = tighvnc-auth
+                logpath = /root/.vnc/vnc.log
+                bantime = 86400
+                findtime = 3600
+                maxretry = 3"  >> /etc/fail2ban/jail.local
+        sudo touch /root/.vnc/vnc.log
+        sudo touch /etc/fail2ban/filter.d/tighvnc-auth.conf
+        sudo echo "[Definition]
+                failregex = authentication failed from <HOST>
+                ignoreregex =" >> /etc/fail2ban/filter.d/tighvnc-auth.conf
+        sudo systemctl start fail2ban
+}
+
 
 clear
 echo "Do you want to install VNC for vServer? (y/n)"
@@ -63,6 +83,7 @@ if [ $os == "1" ]; then
         #sudo mv tor /root/.local/share/torbrowser/tbb/x86_64/tor-browser_en-US/Browser/start-tor-browser
 
         script
+        f2b
 fi
 
 if [ $os == "2" ]; then
