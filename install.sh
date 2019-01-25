@@ -48,6 +48,8 @@ function f2b {
                 failregex = authentication failed from <HOST>
                 ignoreregex =" >> /etc/fail2ban/filter.d/tighvnc-auth.conf
         sudo systemctl start fail2ban
+        sudo echo "tail -f /var/log/auth.log" >> /bin/f2b
+        sudo chmod +x /bin/f2b
 }
 
 
@@ -115,5 +117,6 @@ echo ": Finished!                  :"
 echo ": VNC IP:   localhost:5901   :"
 echo ": Start:    vncstart         :"
 echo ": Stop:     vncstop          :"
+echo ": f2b Log:  f2b              :"
 echo "------------------------------"
 fi
