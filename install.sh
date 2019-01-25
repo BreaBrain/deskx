@@ -31,11 +31,13 @@ function f2b {
         sudo apt-get -y install fail2ban
         sudo systemctl stop fail2ban
         sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+        echo "Server Name:"
+        read server
         sudo echo "[tighvnc-auth]
                 enabled = true
                 port = 5901
                 filter = tighvnc-auth
-                logpath = /root/.vnc/vnc.log
+                logpath = /root/.vnc/$server:1.log
                 bantime = 86400
                 findtime = 3600
                 maxretry = 3"  >> /etc/fail2ban/jail.local
