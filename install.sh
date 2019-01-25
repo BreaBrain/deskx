@@ -31,6 +31,7 @@ function f2b {
         sudo apt-get -y install fail2ban
         sudo systemctl stop fail2ban
         sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+        cat /etc/hostname
         echo "Server Name (root@<server>):"
         read server
         sudo echo "[tighvnc-auth]
