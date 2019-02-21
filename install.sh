@@ -110,7 +110,7 @@ fi
 
 
 
-ip=$(curl ifconfig.me)
+ip=$(curl ipecho.net/plain)
 clear
 echo "------------------------------"
 echo ": Finished!                  :"
