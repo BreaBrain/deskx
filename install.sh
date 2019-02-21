@@ -8,7 +8,9 @@ function update {
 function programms {
         update
         sudo apt-get -y install nano
-        sudo apt-get -y install python
+        sudo apt-get -y install python3 python
+        sudo apt-get -y install python3-pip python-pip
+        sudo apt-get -y install python3-curl python-curl
         sudo apt-get -y install ristretto
         sudo apt-get -y install mpv
         sudo apt-get -y install firefox-esr
@@ -31,9 +33,7 @@ function f2b {
         sudo apt-get -y install fail2ban
         sudo systemctl stop fail2ban
         sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
-        cat /etc/hostname
-        echo "Server Name (root@<server>):"
-        read server
+        server=$(cat /etc/hostname)
         sudo echo "[tighvnc-auth]
                 enabled = true
                 port = 5901
@@ -110,11 +110,11 @@ fi
 
 
 
-
+ip=$(curl ifconfig.me)
 clear
 echo "------------------------------"
 echo ": Finished!                  :"
-echo ": VNC IP:   localhost:5901   :"
+echo ": VNC IP:   $ip:5901   :"
 echo ": Start:    vncstart         :"
 echo ": Stop:     vncstop          :"
 echo ": f2b Log:  f2b              :"
