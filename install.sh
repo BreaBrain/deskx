@@ -95,19 +95,24 @@ if [ $os == "2" ]; then
 
         update
         apt-get install sudo
-        sudo apt-get -y install xfce4 xfce4-goodies
-        sudo apt-get -y install vnc4server
+        sudo apt-get update
+        sudo apt install xfce4 xfce4-goodies tightvncserver
         sudo vncpasswd
-
-        echo "exec /usr/bin/mate-session &" >> ~/.vnc/xstartup
-
         vncserver :1
         vncserver -kill :1
+        sudo mv ~/.vnc/xstartup ~/.vnc/xstartup.bak
+        echo -e "#!/bin/bash
+        xrdb $HOME/.Xresources
+        startxfce4 &" > ~/.vnc/xstartup
+        sudo chmod +x ~/.vnc/xstartup
+        vncserver :1
+        #echo "exec /usr/bin/mate-session &" >> ~/.vnc/xstartup
+
+        script
 
         programms
 
 fi
-
 
 
 ip=$(curl ipecho.net/plain)
