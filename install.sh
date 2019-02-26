@@ -65,21 +65,37 @@ echo "2. Ubuntu"
 echo "3. OpenSuse"
 read os
 if [ $os == "1" ]; then
-
+        clear
+        echo "1. LXDE"
+        echo "2. XFCE4"
+        read os1
         update
         apt-get install sudo
+        
+        if [ $os1 == 1 ]; then
         sudo apt-get -y install lxde
         sudo apt-get -y install xorg lxde-core tightvncserver
         #sudo apt-get -y install vnc4server
         #sudo vncpasswd
-
+        fi
+        if [ $os1 == 2 ]; then
+        sudo apt install xfce4 xfce4-goodies tightvncserver
+        fi
         vncserver :1
         vncserver -kill :1
 
+        if [ $os1 == 1 ]; then
         echo "lxterminal &"  >> ~/.vnc/xstartup
         echo "/usr/bin/lxsession -s LXDE &" >> ~/.vnc/xstartup
         #echo "exec /usr/bin/mate-session &" >> ~/.vnc/xstartup
-
+        fi 
+        if [ $os1 == 2 ]; then
+        sudo mv ~/.vnc/xstartup ~/.vnc/xstartup.bak
+        echo -e "#!/bin/bash
+        xrdb $HOME/.Xresources
+        startxfce4 &" > ~/.vnc/xstartup
+        sudo chmod +x ~/.vnc/xstartu
+        fi
         programms
 
         #sudo printf "deb http://deb.debian.org/debian stretch-backports main contrib" > /etc/apt/sources.list
