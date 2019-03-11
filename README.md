@@ -14,6 +14,6 @@ sudo chmod +x uninstall.sh
 ./uninstall.sh
 
 # OS
-Works with:         Debian
+Works with:         Debian, Ubuntu
 
 Doesnt works with:  OpenSuse
