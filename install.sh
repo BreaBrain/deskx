@@ -75,12 +75,12 @@ if [ $os == "1" ]; then
         
         if [ $os1 == 1 ]; then
         sudo apt-get -y install lxde
-        sudo apt-get -y install xorg lxde-core tightvncserver
+        sudo apt-get -y install xorg lxde-core tightvncserver -y
         #sudo apt-get -y install vnc4server
         #sudo vncpasswd
         fi
         if [ $os1 == 2 ]; then
-        sudo apt install xfce4 xfce4-goodies tightvncserver
+        sudo apt install xfce4 xfce4-goodies tightvncserver -y
         fi
         vncserver :1
         vncserver -kill :1
@@ -95,7 +95,7 @@ if [ $os == "1" ]; then
         echo -e "#!/bin/bash
         xrdb $HOME/.Xresources
         startxfce4 &" > ~/.vnc/xstartup
-        sudo chmod +x ~/.vnc/xstartu
+        sudo chmod +x ~/.vnc/xstartup
         fi
         programms
 
