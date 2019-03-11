@@ -105,7 +105,7 @@ if [ $os == "1" ]; then
         #sudo mv tor /root/.local/share/torbrowser/tbb/x86_64/tor-browser_en-US/Browser/start-tor-browser
 
         script
-        f2b
+        #f2b
 fi
 
 if [ $os == "2" ]; then
