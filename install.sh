@@ -14,6 +14,7 @@ function programms {
         sudo apt-get -y install ristretto
         sudo apt-get -y install mpv
         sudo apt-get -y install firefox-esr
+        sudo apt-get -y install firefox
         sudo apt-get -y install chromium-browser
         sudo apt-get -y install nautilus
         sudo apt-get -y install smplayer
