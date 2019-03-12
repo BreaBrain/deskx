@@ -123,6 +123,7 @@ if [ $os == "2" ]; then
         startxfce4 &" > ~/.vnc/xstartup
         sudo chmod +x ~/.vnc/xstartup
         vncserver :1
+        ln -s /usr/share/backgrounds/xfce/ /wallpaper
         #echo "exec /usr/bin/mate-session &" >> ~/.vnc/xstartup
 
         script
